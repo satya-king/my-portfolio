@@ -1,27 +1,35 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa6";
+import Contact from "./Contact"; // Import Contact component
 
 function Portfolio() {
     return (
         <>
             <header>
-                <a href="#" className="logo">Satya</a>
-
+                <a href="#home" className="logo">Satya</a>
                 <nav>
-                    <a href="#" className="active">Home</a>
-                    <a href="#">Services</a>
-                    <a href="#">Skills</a>
-                    <a href="#">Education</a>
-                    <a href="#">Experience</a>
-                    <a href="#">Contact</a>
+                    <a href="#home" className="active">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#experience">Experience</a>
+                    <a
+                        href="#"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+                        }}
+                    >
+                        Contact
+                    </a>
+
                 </nav>
             </header>
 
-            <section className="home">
+            <section className="home" id="home">
                 <div className="home-img">
                     <img src="Sprofile.jpg" alt="Profile" />
                 </div>
-
                 <div className="home-content">
                     <h1>Hi, It's <span>Satya</span></h1>
                     <h3 className="typing-text">I'm a <span></span></h3>
@@ -43,16 +51,14 @@ function Portfolio() {
                                 style={{ width: "24px", height: "24px" }}
                             />
                         </a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=satyanarayanapadhi2002@gmail.com" target="_blank" rel="noopener noreferrer">
-                            <FaEnvelope />
-                        </a>
-                        {/* <a href="#"><FaXTwitter /></a>
-                        <a href="#"><FaInstagram /></a> */}
+                        <a href="mailto:satyanarayanapadhi2002@gmail.com"><FaEnvelope /></a>
                     </div>
 
                     <a href="#" className="btn">Hire me</a>
                 </div>
             </section>
+
+            <Contact />
         </>
     );
 }
