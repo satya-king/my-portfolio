@@ -1,3 +1,4 @@
+/* ===== Contact Section ===== */
 .contact {
     background-color: black;
     color: white;
@@ -39,6 +40,7 @@
 .contact textarea:focus {
     background-color: rgba(183, 75, 75, 0.1);
     box-shadow: 0 0 10px #b74b4b;
+    outline: none;
 }
 
 .contact textarea {
@@ -66,12 +68,32 @@
     box-shadow: 0 0 25px #b74b4b;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
+    .contact {
+        padding: 4rem 5%;
+    }
+
     .contact h2 {
         font-size: 3rem;
     }
 
     .contact form {
         gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        padding: 3rem 3%;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact button {
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
     }
 }
